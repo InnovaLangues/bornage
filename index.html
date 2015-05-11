@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Bornage audio</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+        <link rel="stylesheet" href="css/main.css">
+
+
+       
+
+        <!-- JS LIBs -->
+        <script language="javascript" type="text/javascript" src="js/lib/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/bootstrap.min.js"></script>
+        <script language="javascript" type="text/javascript" src=" //cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/wavesurfer.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/webaudio.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/drawer.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/drawer.canvas.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/plugins/wavesurfer.timeline.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/plugins/wavesurfer.regions.js"></script>
+        <script language="javascript" type="text/javascript" src="js/lib/wavesurfer/plugins/wavesurfer.minimap.js"></script>
+
+        <!-- JS MY -->
+        <script language="javascript" type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+        <!-- container --> 
+        <div class="container">
+            <!-- title row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Bornage audio - Maquette</h3>
+                </div>
+            </div>
+            <!-- /title row -->
+            <hr/>
+            <!-- change view row -->
+            <div class="row">
+                <div class="col-md-12">                    
+                    <input id="teacher" type="radio" name="type" checked="checked" value="teacher"  onclick="changeView(this)">
+                    <label for="teacher">Enseignant</label>
+                    <input id="student" type="radio" name="type" value="student" onclick="changeView(this)">                    
+                    <label for="student">Etudiant</label>
+                </div>
+            </div>
+            <!-- /change view row -->
+            <hr/>
+            <!-- question row -->
+            <div class="row">
+                <div class="col-md-12">    
+
+                    <label for="question">Question</label>
+                    <input id="question" class="form-control" type="text" value="">
+                </div>
+            </div>
+            <!-- /change view row -->
+            <hr/>
+            <!-- waveform row -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="wave-timeline"></div>
+                    <div id="waveform">
+                        <div class="progress progress-striped active" id="progress-bar">
+                            <div class="progress-bar progress-bar-info"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /waveform row -->
+            <hr/>
+            <!-- control button row -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-default" onclick="playPause()">
+                            <i class="glyphicon glyphicon-play"></i><i class="glyphicon glyphicon-pause"></i>
+                        </button>
+                        <button id="submit-button" class="btn btn-default" onclick="submitAnswer()"><i class="glyphicon glyphicon-ok"></i></button>
+                        <button  class="btn btn-default" onclick="removeRegions(true)"><i class="glyphicon glyphicon-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /control button row -->
+        </div> 
+        <!-- /container -->  
+    </body>
+</html>
