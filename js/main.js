@@ -117,8 +117,8 @@ function playPause() {
 function submitAnswer() {
     var nbOk = 0;
     var nbKo = 0;
-    var teacherTotal = Object.keys(teacherRegions).length;
-    var studentTotal = Object.keys(studentRegions).length;
+    var teacherTotal = teacherRegions ? Object.keys(teacherRegions).length:0;
+    var studentTotal = studentRegions ? Object.keys(studentRegions).length:0;
     
     // attention pour vérifier il faut pour chaque region créée par l'étudiant vérifier si il y a une correspondance
     // dans ce qui a été fait par l'enseignant (pas forcément au même index !!)
@@ -139,7 +139,7 @@ function submitAnswer() {
     else if(studentTotal < teacherTotal){
         message += 'Il manque des régions.';
     }
-    else{
+    else if (studentTotal === teacherTotal){
        message += 'Vous avez le bon nombre de région.'; 
     }
     
